@@ -1,6 +1,6 @@
 const solanaWeb3 = require('@solana/web3.js');
 const connection = new solanaWeb3.Connection(solanaWeb3.clusterApiUrl('mainnet-beta'));
-const tokenAddress = new solanaWeb3.PublicKey('DBjuGRZJ9GJWk8gXy7vDbT9Ycrn7gGGtrKMmtJBdN3Sn');
+const tokenAddress = new solanaWeb3.PublicKey('Df6yfrKC8kZE3KNkrHERKzAetSxbrWeniQfyJY4Jpump');
 
 function changeBackgroundColor() {
   const colors = ['#FF5733', '#33FF57', '#3357FF', '#F333FF'];
