@@ -15,6 +15,10 @@ function changeBackgroundColor() {
 connection.onLogs(tokenAddress, (logs, context) => {
   console.log("Evento detectado:", logs);
   if (logs.err === null) {
+    console.log("Transacción exitosa, cambiando el color...");
     changeBackgroundColor();
+  } else {
+    console.log("Error en la transacción:", logs.err);
   }
 });
+
