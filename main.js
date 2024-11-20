@@ -12,13 +12,12 @@ function changeBackgroundColor() {
 }
 
 // Escucha eventos en la cuenta del token
-connection.onLogs(tokenAddress, (logs, context) => {
-  console.log("Evento detectado:", logs);
-  if (logs.err === null) {
-    console.log("Transacción exitosa, cambiando el color...");
+async function monitorTransactions() {
+  const signatures = await connection.getConfirmedSignaturesForAddress2(tokenAddress, { limit: 1 });
+  console.log("Última transacción detectada:", signatures);
+
+  if (signatures.length > 0) {
     changeBackgroundColor();
-  } else {
-    console.log("Error en la transacción:", logs.err);
   }
-});
+}
 
